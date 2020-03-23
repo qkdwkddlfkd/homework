@@ -85,7 +85,9 @@ bulma.io
                     if (txt3 == null || txt3.trim() === '') {
                         alert('주소를 입력해주세요');
                     } else {
+                        var regExp = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
                         txt4 = $('#phone').val();
+
                         if (txt4 == null || txt4.trim() === '') {
                             alert('전화번호를 입력해주세요');
 
@@ -94,6 +96,8 @@ bulma.io
                             //     $('#warningphonenumber').show(); //JQuery 셀렉터
                             //     $('#phone').val('')
 
+                        } else if (!regExp.test(txt4)) {
+                            alert('01X-XXXX-XXXX 형식으로 입력해주세요');
                         } else {
                             alert('주문 완료!')
                             let temp_html = '<tr>' + '<td>' + ordernumber + '</td>' + '<td>' + txt1 + '</td>' + '<td>' + txt2 + '</td>' + '<td>' + txt3 + '</td>' + '<td>' + txt4 + '</td>' + '</tr>'
@@ -187,28 +191,6 @@ bulma.io
         <tbody width='900px' id='orderlist'>
 
         </tbody>
-        <!-- 
-        <tbody>
-            <tr>
-                <th class="nameofcustomer" scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-            </tr>
-        </tbody>
-    </table> -->
 
 
         </div>
