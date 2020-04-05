@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-homepage = Flask(__name__)
+week4page = Flask(__name__)
 
 from pymongo import MongoClient           # pymongo를 임포트 하기
 client = MongoClient('localhost', 27017)  # mongoDB는 27017 포트로 돌아갑니다.
